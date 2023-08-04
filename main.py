@@ -6,10 +6,18 @@ app.config['JSON_SORT_KEYS'] = False
 
 @app.route('/companies', methods=['GET'])
 def get_companies():
+    page = int(request.args.get('page', 1))
+    per_page = int(request.args.get('per_page', 10))
+    sort_by = request.args.get('sort_by', 'cnpj')
+
+    sorted_companies = sorted(Companies, key=lambda x: x.get(sort_by))
+    start = (page - 1) * per_page
+    end = start + per_page
+    paginated_companies = sorted_companies[start:end]
     return make_response(
         jsonify(
         message = "Companies List",
-        data = Companies
+        data = paginated_companies
     )
     ) 
 
