@@ -17,6 +17,7 @@ Foi proposta a criação de uma Api utilizando Python e Flask aonde tivesse 4 en
 
 
 -  Clonando ele através do comando git clone
+-  Ative o virtual env rodando o comando nome_do_ambiente\Scripts\activate caso esteja no windows e source nome_do_ambiente/bin/activate no linux e macOS
 -  Executar um pip install -r requirements.txt para instalar as dependencias necessárias
 -  Para rodar o projeto utilize o comando python main.py e caso esteja utilizando macOS ou Linux python3 main.py.
 
